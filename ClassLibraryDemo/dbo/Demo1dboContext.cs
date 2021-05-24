@@ -23,8 +23,9 @@ namespace ClassLibraryDemo.dbo
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                if (System.Configuration.ConfigurationManager.ConnectionStrings["Demo1_dbo_ConStr"] != null) { optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["Demo1_dbo_ConStr"].ConnectionString); } else optionsBuilder.UseSqlServer("Data Source=99.133.184.235;Initial Catalog=Demo1;User Id=DemoUser;Password=DemoPass123;Connect Timeout=120;");
+
+                if (System.Configuration.ConfigurationManager.ConnectionStrings["Demo1_dbo_ConStr"] != null) { optionsBuilder.UseSqlServer(System.Configuration.ConfigurationManager.ConnectionStrings["Demo1_dbo_ConStr"].ConnectionString); } 
+                else optionsBuilder.UseSqlServer("Data Source=data01;Initial Catalog=Demo1;User Id=DemoUser;Password=DemoPass321;Connect Timeout=120;");
             }
         }
 
