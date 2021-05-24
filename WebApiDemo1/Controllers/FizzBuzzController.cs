@@ -12,6 +12,8 @@ namespace WebApiDemo1.Controllers
     [ApiController]
     public class FizzBuzzController : ControllerBase
     {
+        private string errMsg = "Error out side of bounds too low or High Must be between 1 and 100.";
+
         [Route("{TopEnd}")]
         [HttpGet]
         public String Get(int TopEnd)
@@ -19,7 +21,7 @@ namespace WebApiDemo1.Controllers
             string FizzBuzzStr ="[";
             if (TopEnd < 1 || TopEnd > 100)
             {
-                FizzBuzzStr += "Error out side of bounds too low or High Must be between 1 and 100.";
+                FizzBuzzStr += errMsg;
             }
             else
             {
@@ -52,7 +54,7 @@ namespace WebApiDemo1.Controllers
             
             if (TopEnd < 1 || TopEnd > 100)
             {
-                return "Error out side of bounds too low or High Must be between 1 and 100.";
+                return errMsg;
             }
             else
             {
